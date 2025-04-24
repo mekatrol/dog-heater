@@ -1,0 +1,9 @@
+logging:
+  file-name: "log.txt"
+  level: "INFO"
+
+mqtt:
+  host: "MQTT_HOST_NAME"
+  port: 1883
+  user: "MQTT_USER_NAME"
+  password: "MQTT_PASSWORD"
