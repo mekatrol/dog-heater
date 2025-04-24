@@ -253,7 +253,7 @@ async def mqtt_state_loop(mqttc: mqtt.Client):
         payload = {
             "temperature1": temp_1,
             "temperature2": temp_2,
-            "temperatureAvgerage": temp_avg,
+            "temperatureAverage": temp_avg,
             "temperatureSetpoint": temp_sp,
             "temperatureProportionalBand": temp_pb,
             "heaterOn": True if heater_on == 1 else False,
