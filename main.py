@@ -229,8 +229,8 @@ def on_message(client, userdata, msg):
     try:
         payload = msg.payload.decode('utf-8')
         data = json.loads(payload)
-        temp_sp = data['temp_sp']
-        temp_pb = data['temp_pb']
+        temp_sp = data['temperatureSetpoint']
+        temp_pb = data['temperatureProportionalBand']
         heater_enabled = data['enabled']
     except json.JSONDecodeError as e:
         print(f"Failed to decode JSON: {e}")
@@ -251,12 +251,12 @@ async def mqtt_state_loop(mqttc: mqtt.Client):
         logger.debug('Posting MQTT')
         
         payload = {
-            "temp_1": temp_1,
-            "temp_2": temp_2,
-            "temp_avg": temp_avg,
-            "temp_sp": temp_sp,
-            "temp_pb": temp_pb,
-            "heater_on": heater_on,
+            "temperature1": temp_1,
+            "temperature2": temp_2,
+            "temperatureAvgerage": temp_avg,
+            "temperatureSetpoint": temp_sp,
+            "temperatureProportionalBand": temp_pb,
+            "heaterOn": True if heater_on == 1 else False,
             "enabled": heater_enabled
         }
         
