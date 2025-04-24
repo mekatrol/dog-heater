@@ -112,7 +112,7 @@ temp_sp = 10
 temp_pb = 1.5
 
 heater_on = 0
-heater_enabled = True
+heater_enabled = False
 
 def init_mqtt(config) -> mqtt.Client:
     unacked_publish = set()
